@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\buchm\\OneDrive - Education Vaud\\ETMLES\\2_PROJ\\6_Programme\\2417_MaquetteBille2D_Software\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D8B39706-D4EF-4C35-B193-A25EEB727A1F}|2417_MaquetteBille2D_Software.csproj|c:\\users\\buchm\\onedrive - education vaud\\etmles\\2_proj\\6_programme\\2417_maquettebille2d_software\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8B39706-D4EF-4C35-B193-A25EEB727A1F}|2417_MaquetteBille2D_Software.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8B39706-D4EF-4C35-B193-A25EEB727A1F}|2417_MaquetteBille2D_Software.csproj|C:\\Users\\buchm\\OneDrive - Education Vaud\\ETMLES\\2_PROJ\\6_Programme\\2417_MaquetteBille2D_Software\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8B39706-D4EF-4C35-B193-A25EEB727A1F}|2417_MaquetteBille2D_Software.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8B39706-D4EF-4C35-B193-A25EEB727A1F}|2417_MaquetteBille2D_Software.csproj|C:\\Users\\buchm\\OneDrive - Education Vaud\\ETMLES\\2_PROJ\\6_Programme\\2417_MaquetteBille2D_Software\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D8B39706-D4EF-4C35-B193-A25EEB727A1F}|2417_MaquetteBille2D_Software.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8B39706-D4EF-4C35-B193-A25EEB727A1F}|2417_MaquetteBille2D_Software.csproj|C:\\Users\\buchm\\OneDrive - Education Vaud\\ETMLES\\2_PROJ\\6_Programme\\2417_MaquetteBille2D_Software\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8B39706-D4EF-4C35-B193-A25EEB727A1F}|2417_MaquetteBille2D_Software.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\buchm\\OneDrive - Education Vaud\\ETMLES\\2_PROJ\\6_Programme\\2417_MaquetteBille2D_Software\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\buchm\\OneDrive - Education Vaud\\ETMLES\\2_PROJ\\6_Programme\\2417_MaquetteBille2D_Software\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T16:47:51.694Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\buchm\\OneDrive - Education Vaud\\ETMLES\\2_PROJ\\6_Programme\\2417_MaquetteBille2D_Software\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\buchm\\OneDrive - Education Vaud\\ETMLES\\2_PROJ\\6_Programme\\2417_MaquetteBille2D_Software\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAswBsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T16:45:31.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\buchm\\OneDrive - Education Vaud\\ETMLES\\2_PROJ\\6_Programme\\2417_MaquetteBille2D_Software\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\buchm\\OneDrive - Education Vaud\\ETMLES\\2_PROJ\\6_Programme\\2417_MaquetteBille2D_Software\\Form1.Designer.cs",
+              "RelativeToolTip": "Form1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T16:45:12.854Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\buchm\\OneDrive - Education Vaud\\ETMLES\\2_PROJ\\6_Programme\\2417_MaquetteBille2D_Software\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\buchm\\OneDrive - Education Vaud\\ETMLES\\2_PROJ\\6_Programme\\2417_MaquetteBille2D_Software\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T05:05:06.281Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
