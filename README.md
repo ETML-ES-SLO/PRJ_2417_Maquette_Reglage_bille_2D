@@ -20,3 +20,7 @@ auj g eu la présentation de mon avancement, ça c'est bien passer en soit. Sino
 Update du 11.03.26 :
 
 auj g que réussi à faire le structogramme de l'APP_Task , mais il est fini et au propre. Il est stocker ici :  K:\ES\PROJETS\SLO\2417_MaquetteBille2D\2417B_POBJ\doc
+
+Update du 18.03.26 :
+
+auj g fait un bout du structo pour la détection de bille. g aussi fait un bout de modif du code pour cette détection, il suffit juste d'implémenter le code et tester.
