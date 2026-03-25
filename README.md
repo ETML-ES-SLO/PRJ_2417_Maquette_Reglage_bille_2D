@@ -28,7 +28,9 @@ Sinon plus interessant j'ai fait des tests :
 
 ## Update du 11.03.26 :
 aujourd'hui j'ai que réussi à faire le structogramme de l'APP_Task , mais il est fini et au propre. Il est stocker ici :  K:\ES\PROJETS\SLO\2417_MaquetteBille2D\2417B_POBJ\doc
+
 le voici : 
+![Structogramme de l'App_Task d'origine lorsque j'ai récupéré le projet](/doc/Structogrammes/ReadOnly/APP_Task.png)
 
 ## Update du 18.03.26 :
 aujourd'hui j'ai fait un bout du structogramme pour la détection de bille. J'ai aussi fait un bout de modif du code pour cette détection, il suffit juste d'implémenter le code et tester.
