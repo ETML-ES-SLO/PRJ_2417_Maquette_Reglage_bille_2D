@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="https://structorizer.fisch.lu" version="3.30-10" preRepeat="until " postFor="to" preReturn="return" postForIn="in" preWhile="while " output="OUTPUT" input="INPUT" preFor="for" preExit="exit" preLeave="leave" ignoreCase="true" preThrow="throw" preForIn="foreach" stepFor="by" author="pr94rsb" created="2026-03-11" changedby="pr94rsb" changed="2026-03-18" origin="Structorizer 3.30-10" text="&#34;APP_Task_V2&#34;" comment="&#34;&#34;" color="ffffff" type="sub" style="nice">
+	<children>
+		<instruction text="&#34;Structure principale des données de l'application:&#34;,&#34;  APP_DATA appData&#34;,&#34;&#34;,&#34;Instances PID pour chaque axe du plateau:&#34;,&#34;  PID_DATA pidX&#34;,&#34;  PID_DATA pidY&#34;,&#34;&#34;,&#34;Variables globales externes (partagée avec le menu) :&#34;,&#34;  - réel à virgule flotante 32_bits :&#34;,&#34;      (volatile) KpXY&#34;,&#34;      (volatile) KiXY&#34;,&#34;      (volatile) KdXY&#34;,&#34;&#34;,&#34;Variables globales:&#34;,&#34;  - Booléens :&#34;,&#34;      (static)(volatile) frameReady = false&#34;,&#34;&#34;,&#34;  - entier non-signée 8_bits :&#34;,&#34;      (volatile) txBuf[TX_SIZE]&#34;,&#34;      (volatile) rxBuf[RX_SIZE]&#34;,&#34;&#34;,&#34;  - entier non-signée 16_bits :&#34;,&#34;      (volatile) txHead = 0&#34;,&#34;      (volatile) txTail = 0&#34;,&#34;      (volatile) rxHead = 0&#34;,&#34;      (volatile) rxTail = 0&#34;,&#34;&#34;,&#34;  - réel à virgule flotante 32_bits :&#34;,&#34;      (static)(volatile) kpNew = 0.0f&#34;,&#34;      (static)(volatile) kiNew = 0.0f&#34;,&#34;      (static)(volatile) kdNew = 0.0f&#34;" comment="" color="c0c0c0" rotated="0" disabled="0"></instruction>
+		<case text="&#34;(appData.state)&#34;,&#34;APP_STATE_INIT&#34;,&#34;APP_STATE_SERVICE_TASKS&#34;,&#34;APP_STATE_WAIT&#34;,&#34;default&#34;" comment="" color="ffff80" disabled="0">
+			<qCase>
+				<call text="&#34;lcd_init&#34;" comment="" color="80ffff" disabled="0"></call>
+				<call text="&#34;lcd_bl_on&#34;" comment="" color="80ffff" disabled="0"></call>
+				<call text="&#34;aller à la pos x=1 et y=2 du LCD&#34;" comment="" color="80ffff" disabled="0"></call>
+				<call text="&#34;printf_lcd(&#34;&#34;2417_MaquetteBille2D&#34;&#34;)&#34;" comment="" color="80ffff" disabled="0"></call>
+				<call text="&#34;aller à la pos x=1 et y=3 du LCD&#34;" comment="" color="80ffff" disabled="0"></call>
+				<call text="&#34;printf_lcd(&#34;&#34;MBR&#34;&#34;)&#34;" comment="" color="80ffff" disabled="0"></call>
+				<call text="&#34;RTS_INIT&#34;" comment="" color="80ffff" disabled="0"></call>
+				<call text="&#34;Activation de l'interuption RX avec PLIB&#34;" comment="" color="80ffff" disabled="0"></call>
+				<call text="&#34;Démarrage des périphériques : SPI, Timers, PWM&#34;" comment="" color="80ffff" disabled="0"></call>
+				<call text="&#34;Passer à l'état APP_STATE_WAIT&#34;" comment="" color="80ffff" disabled="0"></call>
+				<instruction text="" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qCase>
+			<qCase>
+				<instruction text="&#34;Variables d'entrée :&#34;,&#34;  - entier non-signée 8_bits :&#34;,&#34;      (static) menuWasActive = 0&#34;,&#34;&#34;,&#34;  - entier non-signée 16_bits :&#34;,&#34;      (static) pwmX = 0&#34;,&#34;      (static) pwmY = 0&#34;,&#34;&#34;,&#34;  - réel à virgule flotante 32_bits :&#34;,&#34;      (const) Ts = 0.002f&#34;,&#34;      (static) xfilt = 0.0f&#34;,&#34;      (static) yfilt = 0.0f&#34;" comment="" color="c0c0c0" rotated="0" disabled="0"></instruction>
+				<instruction text="&#34;// 1) Récupère les octets RX et alimente la FSM de réception.&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<call text="&#34;PumpRxFifo&#34;" comment="" color="80ffff" disabled="0"></call>
+				<instruction text="&#34;// 2) Si une trame complète PID a été reçue, met à jour les gains.&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<alternative text="&#34;SI(frameReady)&#34;" comment="" color="ffff80" disabled="0">
+					<qTrue>
+						<instruction text="&#34;KpXY = kpNew&#34;,&#34;KiXY = kiNew&#34;,&#34;KdXY = kdNew&#34;,&#34;&#34;,&#34;menuForceRefresh = true&#34;" comment="" color="80ff80" rotated="0" disabled="0"></instruction>
+						<call text="&#34;sendPIDXY&#34;" comment="" color="80ffff" disabled="0"></call>
+						<instruction text="&#34;frameReady = false&#34;" comment="" color="80ff80" rotated="0" disabled="0"></instruction>
+					</qTrue>
+					<qFalse color="ff80c0">
+					</qFalse>
+				</alternative>
+				<instruction text="&#34;// 3) Exécute la tâche menu (machine d'état du GUI).&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<call text="&#34;menuTache&#34;" comment="" color="80ffff" disabled="0"></call>
+				<alternative text="&#34;SI(menuActif())&#34;" comment="" color="ffff80" disabled="0">
+					<qTrue>
+						<alternative text="&#34;SI(menuWasActive est égale à 0)&#34;" comment="" color="ffff80" disabled="0">
+							<qTrue>
+								<call text="&#34;sendPIDXY&#34;" comment="" color="80ffff" disabled="0"></call>
+								<instruction text="&#34;menuWasActive = 1&#34;" comment="" color="80ff80" rotated="0" disabled="0"></instruction>
+							</qTrue>
+							<qFalse color="ff80c0">
+							</qFalse>
+						</alternative>
+						<instruction text="&#34;// Centre les servos (plateau à plat) durant le réglage.&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+						<call text="&#34;PLIB_OC_PulseWidth16BitSet(OC_ID_1, 1125)&#34;,&#34;PLIB_OC_PulseWidth16BitSet(OC_ID_2, 1125)&#34;" comment="" color="80ffff" disabled="0"></call>
+						<instruction text="" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<alternative text="&#34;SINON SI(PENIRQ_ détecte une bille sur le plateau)&#34;" comment="&#34;&#34;" color="ffff80" disabled="0">
+							<qTrue>
+								<instruction text="&#34;menuWasActive = 0&#34;" comment="" color="80ff80" rotated="0" disabled="0"></instruction>
+								<instruction text="&#34;// a) Lecture brute des positions tactiles X/Y&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+								<call text="&#34;appData.rawX = TSC2046_ReadRawX()&#34;,&#34;appData.rawY = TSC2046_ReadRawY()&#34;" comment="" color="80ffff" disabled="0"></call>
+								<instruction text="&#34;// b) Conversion en pixels utilisables à l'écran.&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+								<call text="&#34;appData.posPixelX = TSC2046_ReadPixel(appData.rawX, XMIN, XMAX)&#34;,&#34;appData.posPixelY = 1599 - TSC2046_ReadPixel(appData.rawY, YMIN, YMAX)&#34;" comment="" color="80ffff" disabled="0"></call>
+								<instruction text="&#34;// c) Filtrage exponentiel (anti-bruit)&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+								<instruction text="&#34;xfilt += IIR_BETA * ((float)appData.rawX - xfilt)&#34;,&#34;yfilt += IIR_BETA * ((float)appData.rawY - yfilt)&#34;" comment="" color="80ff80" rotated="0" disabled="0"></instruction>
+								<instruction text="&#34;// d) Régulation PID sur chaque axe PWM&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+								<call text="&#34;pwmX = PIDRegulation((uint16_t)xfilt, ZEROX, DIR_X, KpXY, KiXY, KdXY, Ts, 0)&#34;,&#34;pwmY = PIDRegulation((uint16_t)yfilt, ZEROY, DIR_Y, KpXY, KiXY, KdXY, Ts, 1)&#34;" comment="" color="80ffff" disabled="0"></call>
+								<instruction text="&#34;// e) Application des rapports cycliques aux sorties PWM.&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+								<call text="&#34;PLIB_OC_PulseWidth16BitSet(OC_ID_1, pwmY)&#34;,&#34;PLIB_OC_PulseWidth16BitSet(OC_ID_2, pwmX)&#34;" comment="" color="80ffff" disabled="0"></call>
+								<instruction text="&#34;// f) Retour visuel + télémétrie.&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+								<call text="&#34;lcdShowPos&#34;" comment="" color="80ffff" disabled="0"></call>
+								<call text="&#34;sendPosition&#34;" comment="" color="80ffff" disabled="0"></call>
+							</qTrue>
+							<qFalse>
+								<call text="&#34;PLIB_OC_PulseWidth16BitSet(OC_ID_1, 1125)&#34;,&#34;PLIB_OC_PulseWidth16BitSet(OC_ID_2, 1125)&#34;" comment="" color="80ffff" disabled="0"></call>
+							</qFalse>
+						</alternative>
+					</qFalse>
+				</alternative>
+				<call text="&#34;Passer à l'état APP_STATE_WAIT&#34;" comment="" color="80ffff" disabled="0"></call>
+			</qCase>
+			<qCase>
+				<instruction text="" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qCase>
+			<qCase>
+				<instruction text="" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qCase>
+		</case>
+	</children>
+</root>
