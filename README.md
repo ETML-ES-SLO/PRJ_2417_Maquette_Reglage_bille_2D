@@ -37,3 +37,6 @@ aujourd'hui j'ai fait un bout du structogramme pour la détection de bille. J'ai
 
 ## Update du 25.03.26 :
 aujourd'hui j'ai mis un peux au propre le readme pour que ça soit plus agréable à lire. je vais aussi tester le code voir si l'idée fonctionne.
+
+## Update du 01.04.26 :
+aujourd'hui j'ai tester le code et ça ne fonctionnait pas comme prévu alors j'ai fait 2 ou 3 ajustements et maintenant la détection de bille fonctionne et le structogramme est déjà à jour. Cependant quand on modifie les gains Kp ou autre le système ne régule plus, je ne sais pas si c'est liée à ma détection de bille ou si c'est un problème récurent de l'ancienne version qui doit être règler aussi.
