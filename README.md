@@ -40,3 +40,8 @@ aujourd'hui j'ai mis un peux au propre le readme pour que ça soit plus agréabl
 
 ## Update du 01.04.26 :
 aujourd'hui j'ai tester le code et ça ne fonctionnait pas comme prévu alors j'ai fait 2 ou 3 ajustements et maintenant la détection de bille fonctionne et le structogramme est déjà à jour. Cependant quand on modifie les gains Kp ou autre le système ne régule plus, je ne sais pas si c'est liée à ma détection de bille ou si c'est un problème récurent de l'ancienne version qui doit être règler aussi.
+
+## Update du 22.04.26 :
+j'ai fait la présentation de ma détection de bille terminée. ensuite j'ai fait le structogramme du callback liée au timer 1 pour terminer la doc des modifications liée à la détection de bille. Ensuite j'ai commencer à faire l'issu de l'affichage en mettant en place un message de bienvenu et un message indiquant la présence de la bille.
+
+sinon plus interessant j'ai peut être trouver pourquoi ,c'est sûrement lier au atof() qui se trouve dans la fonction menuGestionBouton() dans GestMenu.c
