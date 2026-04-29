@@ -46,4 +46,8 @@ j'ai fait la présentation de ma détection de bille terminée. ensuite j'ai fai
 
 sinon plus interessant j'ai peut être trouver pourquoi la carte crash quand on modifie les paramètres PID, c'est sûrement lier au atof() qui se trouve dans la fonction menuGestionBouton() dans GestMenu.c
 
+## Update du 22.04.26 :
+j'ai fait la partie affichage du mode remote ou locale pour les settings, j'ai pas encore tester le code pour voir si ça marche car il redessine tellement souvent la page que c'est dure de trouver un endroit où il efface pas tout l'écran, c'est vraiment quelquechose qu'il faut que je fasse pour la prochaine fois c'est de m'occupper de cet affichage car sinon on vas aller droit dans le mur vu comment c'est fait actuellement.
+
+J'ai égaleent mis à jour mes structogrammes par rapport aux mssage de bienvenu et 2 ou 3 correction que j'avais fais dans le code mais pas dans le structo.
 
