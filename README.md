@@ -51,3 +51,5 @@ j'ai fait la partie affichage du mode remote ou locale pour les settings, j'ai p
 
 J'ai égaleent mis à jour mes structogrammes par rapport aux mssage de bienvenu et 2 ou 3 correction que j'avais fais dans le code mais pas dans le structo.
 
+## Update du 06.05.26 :
+auj on m'a dis de m'occupper de l'affichage et du menu, faire 1 nouveau fichier .c et .h pour le menu et si g du temps pour les boutons. Le but c'est de refaire un affichage propre en partant d'un truc déjà aproximativement fonctionnel , donc on garde quand même les anciens fichiers de menu pour avoir une backup fonctionnel.  J'ai donc décider de reprendre mes fichiers que j'avais fais pour le TP3 de MINF (gestBtn et MenuGen) et les modifiers pour les adaptées à ce code.
