@@ -53,3 +53,6 @@ J'ai égaleent mis à jour mes structogrammes par rapport aux mssage de bienvenu
 
 ## Update du 06.05.26 :
 auj on m'a dis de m'occupper de l'affichage et du menu, faire 1 nouveau fichier .c et .h pour le menu et si g du temps pour les boutons. Le but c'est de refaire un affichage propre en partant d'un truc déjà aproximativement fonctionnel , donc on garde quand même les anciens fichiers de menu pour avoir une backup fonctionnel.  J'ai donc décider de reprendre mes fichiers que j'avais fais pour le TP3 de MINF (gestBtn et MenuGen) et les modifiers pour les adaptées à ce code.
+
+## Update du 13.05.26 :
+auj j'ai enfin fini ma librairie universelle pour les boutons (alors que c'était seulement si j'avais du temps ;-;) du coup j'ai enfin commencer pour de vrais à faire le menu , j'ai bien commencer la nouvelle structure mais y'aura sûrement des paramètres qui vont s'ajouter au fil du temps, j'ai également déjà mis à jour la gestion de l'inactivité.
