@@ -56,3 +56,5 @@ auj on m'a dis de m'occupper de l'affichage et du menu, faire 1 nouveau fichier 
 
 ## Update du 13.05.26 :
 auj j'ai enfin fini ma librairie universelle pour les boutons (alors que c'était seulement si j'avais du temps ;-;) du coup j'ai enfin commencer pour de vrais à faire le menu , j'ai bien commencer la nouvelle structure mais y'aura sûrement des paramètres qui vont s'ajouter au fil du temps, j'ai également déjà mis à jour la gestion de l'inactivité.
+
+par contre j'ai fait aucun structogramme donc je vais essayer d'avancer ce menu du mieux que je peux pendant mes pauses histoire d'avoir un truc à montrer aux profs mais les prochaines fois faudra je mette la gomme sur la documentation.
