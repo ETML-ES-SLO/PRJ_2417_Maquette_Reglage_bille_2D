@@ -1,6 +1,34 @@
-voila g fait un README.
+## versionning :
+### IDE :
+  MPLABX IDE (v6.15)
+### Configurateur graphique :
+  harmony (v2.06)
+### Compilateur :
+  XC32 (v2.50)
 
-sinon la version utilisée de MPLABX IDE est la v6.15 et pour harmony c'est la v2.06
+## Caractéristique du projet :
+### Emplacement :
++ code (liée à la session LFO) :
+  + C:\microchip\harmony\v2_06\apps\PROJ\2417_B_MaquetteBille2D
++ projet en général :
+  + K:\ES\PROJETS\SLO\2417_MaquetteBille2D\2417B_POBJ
+
+## Explications sur les fonction implémenté :
+### détection de la bille sur le plateau :
+le TSC (le driver qui s'occupe de lire le plateau) doit être configurer d'une certaine manière. Les registres PD1 et PD0 sont tous les deux mis à "0" pour utiliser le mode de "lecture constante" ce qui permet d'utiliser la fonction de la pin PENIRQ. 
+
+Celle-ci est dédiée à la détection de bille, dans ce mode quand la bille est détectée sur le plateau elle reste à 0, par contre quand il n'y a pas de bille alors elle est dans un état un peux indéterminée (aléatoire). Pour contrer ce problème on utilise la libraire Mc32Debounce donnée en MINF pour faire de l'anti-rebond sur le signal afin de valider après 3 états bas que la bille est réellement présente.
+
+Lorsque la bille est détectée la régulation est activer (avec un simple if()), et si la bille est absente alors la condition du If() n'est plus respecter et donc on arrête de réguler et on recentre les plateaux.
+
+Voici le structogramme :
+![Structogramme de l'App_Task d'origine lorsque j'ai récupéré le projet](/doc/Structogrammes/ReadOnly/APP_Task_V2-0.png)
+
+
+
+
+
+
 ## travaille fait le 25.02.26 :
 + voici ce que j'ai analysé pour la prochaine foit : 
   + la PIn PENIRQ peut être disable selon la configue de PD1 et PD0, se sont des registres dans lesquelles on écrit pas commande SPI dans le TSC.
