@@ -1,28 +1,46 @@
+## Déveoppeur 
+> [MBR](https://github.com/MathieuBucher) -> version hardware : A - version firmware 1.0 - version sotware 1.0
+>
+> [LFO](https://github.com/VolutedPenny235) -> version soft 1.1
+
 ## versionning :
-### IDE :
-  MPLABX IDE (v6.15)
-### Configurateur graphique :
-  harmony (v2.06)
-### Compilateur :
-  XC32 (v2.50)
 
-## Caractéristique du projet :
-### Emplacement :
-+ code (liée à la session LFO) :
-  + C:\microchip\harmony\v2_06\apps\PROJ\2417_B_MaquetteBille2D
-+ projet en général :
-  + K:\ES\PROJETS\SLO\2417_MaquetteBille2D\2417B_POBJ
+> hardware : version A 
 
-## Explications sur les fonction implémenté :
-### détection de la bille sur le plateau (fonctionnel):
-le TSC (le driver qui s'occupe de lire le plateau) doit être configurer d'une certaine manière. Les registres PD1 et PD0 sont tous les deux mis à "0" pour utiliser le mode de "lecture constante" ce qui permet d'utiliser la fonction de la pin PENIRQ. 
+> software : V1.0 -> V1.0 
 
-Celle-ci est dédiée à la détection de bille, dans ce mode quand la bille est détectée sur le plateau elle reste à 0, par contre quand il n'y a pas de bille alors elle est dans un état un peux indéterminée (aléatoire). Pour contrer ce problème on utilise la libraire Mc32Debounce donnée en MINF pour faire de l'anti-rebond sur le signal afin de valider après 3 états bas que la bille est réellement présente.
+## Outils de développmeent pour le firmware :
 
-Lorsque la bille est détectée la régulation est activer (avec un simple if()), et si la bille est absente alors la condition du If() n'est plus respecter et donc on arrête de réguler et on recentre les plateaux.
+> IDE + configurateur graphique : MPLABX IDE (v6.15) + harmony (v2.06)
 
-Voici le structogramme :
-![Structogramme de l'App_Task d'origine lorsque j'ai récupéré le projet](/doc/Structogrammes/ReadOnly/APP_Task_V2-0.png)
+> compilateur : XC32 (v2.50)
+
+### Emplacement obligatoire pour développment Firmware  
+
+> `C:\microchip\harmony\v2_06\apps\PROJ\2417_B_MaquetteBille2D`
+
+## Architecture Firwmare 
+### Structogramme Version 1.0
+![Structogramme version 1.0](/soft/Firmware/architecture/Structogrammes/ReadOnly/APP_Task.jpg)
+
+### Structogramme Version 1.1
+![Structogramme version 1.1](/soft/Firmware/architecture/Structogrammes/ReadOnly/APP_Task_V2-0.jpg)
+
+## Explications sur les modifications implémentées :
+### détection de la bille sur le plateau -> déployement fonctionnel :
+le [TSC2046E](/doc/datasheets/tsc2046e.pdf) étant le driver qui s'occupe de lire le plateau, celui-ci doit être configuré d'une certaine manière. Les registres PD1 et PD0 sont tous les deux mis à "0" pour utiliser le mode de "lecture constante" ce qui permet d'utiliser la fonction de la pin PENIRQ -> voir la p16 du datasheet. 
+
+La pin **_PINIRG** (active bas) est dédiée à la détection de bille ; dans ce mode quand la bille est détectée sur le plateau elle reste à 0, par contre quand il n'y a pas de bille cette pin est dans un état indéterminée (aléatoire). Pour contrer, utilisation la libraire `Mc32Debounce (.c et .h)` qui est une étection d'anti-rebond développé à l'ES et utilisée dans différents TPs-Exercices donné en MicroInformatique (***MINF***). Pourquoi utiliser cette librairie, pour s'assurer de la détection de la bille. 
+
+Lorsque la bille est détectée la régulation est activée 
+
+```
+Si bille detectee 
+  regulation activee 
+Sinon 
+  regulation stopper 
+  ajustement du plateau 
+``` 
 
 ### Gestion des Boutons (création de drivers complèts pour prochain User) :
 Cette librairie est fortement inspirer du travail que l'on as dû faire en MINF pour le TP3_MenuGen. J'y reprend tout le concepte utilisée pour le PEC12 (la molette rotative) et l'ai adaptée pour l'utiliser sur n'importe quelle boutons (à condition de pointer sur les bons ports). J'ai déjà tout préparer pour qu'elle pointe aux bons ports , il ne reste plus qu'à l'utilisée. 
